@@ -1,50 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
-        <description/>
+        <description>Practice debugging techniques in ServiceNow.</description>
         <field>active</field>
         <global>true</global>
         <messages/>
-        <name>NeedIt onLoad Example</name>
+        <name>NeedIt Practice Debugging</name>
         <order/>
-        <script><![CDATA[function onLoad() {
+        <script><![CDATA[function onSubmit() {
    //Type appropriate comment here, and begin script below
-   alert("Thank you for loading the NeedIt form.   When you close this alert you will           be able to interact with the form.");
-	var x =7;
-	jslog("This msg is from jslog()*****");
-	jslog("*****The Value for X: " + x);
-	jslog("****State : " + g_form.getValue('state'));
-	jslog("****User : " + g_user.getFullName());
-	console.log('KKKKKK i am a console log message');
-	try
-	{ 
-		helloWorld();
-	}
-	catch(err){
-		jslog(">>>>>run time error*****" + err.message);
-		
-		}
+  try{
+	  var x = 34;
+	  jslog("hi good morning");
+	  jslog("the value : " + x);
+	  jslog(" state : " + g_form.getValue("state") + " user : " + g_user.getFullName());
+	  g_form.setValue("short_description", g_form.getValue("short_description" + "<<<<<<<<value updated>>>>>>"));
+	  
+  } 
+					  catch(err){
+		  jslog("hello error occured : " + err.message);
+	  }
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-02-08 17:07:03</sys_created_on>
+        <sys_created_on>2018-10-09 00:53:38</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>139133b10fb43200cd674f8ce1050efb</sys_id>
-        <sys_mod_count>14</sys_mod_count>
-        <sys_name>NeedIt onLoad Example</sys_name>
+        <sys_id>83a8171ddb812300ec98178039961909</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>NeedIt Practice Debugging</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_script_client_139133b10fb43200cd674f8ce1050efb</sys_update_name>
+        <sys_update_name>sys_script_client_83a8171ddb812300ec98178039961909</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-09 01:52:56</sys_updated_on>
+        <sys_updated_on>2018-10-10 00:32:37</sys_updated_on>
         <table>x_58872_needit_needit</table>
-        <type>onLoad</type>
+        <type>onSubmit</type>
         <ui_type>10</ui_type>
         <view/>
     </sys_script_client>
